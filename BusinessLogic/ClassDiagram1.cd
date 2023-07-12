@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BusinessLogic.BankDetails">
+    <Position X="0.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAQAAIAAAAQAAAEAAGQAAEAAAAgAAABCABSAAAAAEAA=</HashCode>
+      <FileName>BankDetails.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusinessLogic.Batch">
+    <Position X="3" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAoAAAAAAgAEAACAAIAAAQAABAAAAQAEAAQABAAI=</HashCode>
+      <FileName>Batch.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusinessLogic.Campaign">
+    <Position X="5.5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAoBAEAIiAEEAECAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Campaign.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusinessLogic.CampaignBenefits">
+    <Position X="7.75" Y="0.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAKAIAAEAAAAAEAACAAAAICAAABAAAEEAAAAAAAAAA=</HashCode>
+      <FileName>CampaignBenefits.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusinessLogic.CampaignSubMemberType">
+    <Position X="11" Y="0.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAACAIAAEAQAAAEAACAAAAICAAABAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>CampaignSubMemberType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusinessLogic.CampaignWorkflowSteps">
+    <Position X="0.5" Y="5.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAoAAEAAAAAEAACAAAABAAAAIAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>CampaignWorkflowSteps.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusinessLogic.CommonLists">
+    <Position X="3" Y="5.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AgIAABAAQAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CommonLists.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusinessLogic.Dashboard">
+    <Position X="5.5" Y="5.25" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAJAACAAQAAAAAIAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Dashboard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusinessLogic.Incognito">
+    <Position X="9" Y="5.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAQAAAACAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Incognito.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusinessLogic.PersonalDetails">
+    <Position X="11" Y="5.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>ACCAANAAACAAQEGJICoEAQAABAAQAABAQAAAAAAAEIA=</HashCode>
+      <FileName>PersonalDetails.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusinessLogic.RelationshipType">
+    <Position X="9.5" Y="13.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AEAAAIAAAAAAAEEAAKAAAAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RelationshipType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusinessLogic.Sales">
+    <Position X="3.75" Y="13.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>gASAAIAEEAAQgAEBBCEABKAAAAACAAEAACAAASAwAAA=</HashCode>
+      <FileName>Sales.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusinessLogic.SalesLog">
+    <Position X="8.75" Y="8.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAQEIAEAAAAgAEAACAAAAACAgAAAAAAAABAABAAAAA=</HashCode>
+      <FileName>SalesLog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusinessLogic.SubMemberDetails">
+    <Position X="6.25" Y="13.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AABAEMAAAAAAAEEAAKAAAAAABAEQAAABAABAAAAAAAA=</HashCode>
+      <FileName>SubMemberDetails.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusinessLogic.SubMemberType">
+    <Position X="0.5" Y="13.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAgAAIAAIAAAAEEAACAAAAAAAAEAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>SubMemberType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusinessLogic.Users">
+    <Position X="0.5" Y="8.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAIIAAAAAgAEgACAoAAIACBAgAAAAAAgAAAEAAAA=</HashCode>
+      <FileName>Users.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusinessLogic.Validators">
+    <Position X="3.25" Y="8.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AASAAAAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Validators.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusinessLogic.WorkflowStep">
+    <Position X="5.5" Y="8.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAYAAAACAAAEACCAIAAAAQAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>WorkflowStep.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

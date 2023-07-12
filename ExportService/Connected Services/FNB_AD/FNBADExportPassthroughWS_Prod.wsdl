@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="FNBADExportPassthroughWS_Prod" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://192.168.130.22:9964/FNBADExportPassthroughWS.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://192.168.130.22:9964/FNBADExportPassthroughWS.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IExportPassthroughWS_Marco_InputMessage">
+    <wsdl:part name="parameters" element="tns:Marco" />
+  </wsdl:message>
+  <wsdl:message name="IExportPassthroughWS_Marco_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MarcoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExportPassthroughWS_ExportSale_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExportSale" />
+  </wsdl:message>
+  <wsdl:message name="IExportPassthroughWS_ExportSale_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExportSaleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExportPassthroughWS_EnquirePolicy_InputMessage">
+    <wsdl:part name="parameters" element="tns:EnquirePolicy" />
+  </wsdl:message>
+  <wsdl:message name="IExportPassthroughWS_EnquirePolicy_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EnquirePolicyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExportPassthroughWS_UpgradePolicy_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpgradePolicy" />
+  </wsdl:message>
+  <wsdl:message name="IExportPassthroughWS_UpgradePolicy_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpgradePolicyResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IExportPassthroughWS">
+    <wsdl:operation name="Marco">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExportPassthroughWS/Marco" message="tns:IExportPassthroughWS_Marco_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExportPassthroughWS/MarcoResponse" message="tns:IExportPassthroughWS_Marco_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportSale">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExportPassthroughWS/ExportSale" message="tns:IExportPassthroughWS_ExportSale_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExportPassthroughWS/ExportSaleResponse" message="tns:IExportPassthroughWS_ExportSale_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EnquirePolicy">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExportPassthroughWS/EnquirePolicy" message="tns:IExportPassthroughWS_EnquirePolicy_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExportPassthroughWS/EnquirePolicyResponse" message="tns:IExportPassthroughWS_EnquirePolicy_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpgradePolicy">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExportPassthroughWS/UpgradePolicy" message="tns:IExportPassthroughWS_UpgradePolicy_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExportPassthroughWS/UpgradePolicyResponse" message="tns:IExportPassthroughWS_UpgradePolicy_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IExportPassthroughWS" type="tns:IExportPassthroughWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Marco">
+      <soap:operation soapAction="http://tempuri.org/IExportPassthroughWS/Marco" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportSale">
+      <soap:operation soapAction="http://tempuri.org/IExportPassthroughWS/ExportSale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnquirePolicy">
+      <soap:operation soapAction="http://tempuri.org/IExportPassthroughWS/EnquirePolicy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpgradePolicy">
+      <soap:operation soapAction="http://tempuri.org/IExportPassthroughWS/UpgradePolicy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FNBADExportPassthroughWS_Prod">
+    <wsdl:port name="BasicHttpBinding_IExportPassthroughWS" binding="tns:BasicHttpBinding_IExportPassthroughWS">
+      <soap:address location="http://192.168.130.22:9964/FNBADExportPassthroughWS.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

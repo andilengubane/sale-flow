@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://v1.fnblife.fnb.co.za/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="FNBLifeServicesService" targetNamespace="http://v1.fnblife.fnb.co.za/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://v1.fnblife.fnb.co.za/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="genericRequest" type="tns:genericRequest" />
+      <xs:element name="genericRequestResponse" type="tns:genericRequestResponse" />
+      <xs:complexType name="genericRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string" />
+          <xs:element minOccurs="0" name="arg1" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="genericRequestResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="genericRequestResponse">
+    <wsdl:part name="parameters" element="tns:genericRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="genericRequest">
+    <wsdl:part name="parameters" element="tns:genericRequest" />
+  </wsdl:message>
+  <wsdl:portType name="FNBLifeServices">
+    <wsdl:operation name="genericRequest">
+      <wsdl:input name="genericRequest" message="tns:genericRequest" />
+      <wsdl:output name="genericRequestResponse" message="tns:genericRequestResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FNBLifeServicesServiceSoapBinding" type="tns:FNBLifeServices">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="genericRequest">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="genericRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="genericRequestResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FNBLifeServicesService">
+    <wsdl:port name="FNBLifeServicesPort" binding="tns:FNBLifeServicesServiceSoapBinding">
+      <soap:address location="http://172.18.189.132:8080/FNBLifeServices" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,2665 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://phakama.co.za/webservices/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://phakama.co.za/webservices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://phakama.co.za/webservices/">
+      <s:element name="fPayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strMemberNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strJoinRef" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTellCell" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRefNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fPaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fPaymentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthHeader" type="tns:AuthHeader" />
+      <s:complexType name="AuthHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DataBase" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LoginUser" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="fReturnPaymentDisputes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strAgent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRep" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strStartDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEndDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fReturnPaymentDisputesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fReturnPaymentDisputesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fSendSMS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strMemberNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strJoinRef" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTelCell" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fSendSMSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fSendSMSResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fAuthRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strMemberNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strJoinRef" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTelCell" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fAuthRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fAuthRequestResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fAuthResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strMemberNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strJoinRef" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMessageID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fAuthResponseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fAuthResponseResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fAddLeadStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strClmLeadId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strReason" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fAddLeadStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fAddLeadStatusResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fReturnLeads">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strBucket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLastClmLeadId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fReturnLeadsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fReturnLeadsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fReturnFranchise">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strBroker" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strBranch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAgent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRep" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fReturnFranchiseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fReturnFranchiseResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fAddNewMember">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strJoinRef" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAppDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCommDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTitle" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strInit" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSurname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strBirthDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPassport" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMaritalStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTelHome" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTelWork" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTelCell" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTelFax" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPO1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPO2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPO3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPOCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strHome1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strHome2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strHome3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strHCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strNotes" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strBenName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strBenID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strBankName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strBankBranch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strBankCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAccNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAccType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAccDetails" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strJoinFeeDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMonthlyAction" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bLastDay" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPaymentFrequency" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPaymethod" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPersalNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPersalRef" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOccupation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEmployer" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEmpDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGroupName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strNationality" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSetPremium" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSetCover" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strBroker" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strBranch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAgent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRep" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strReferer" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strBarcode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bAllowDuplicateId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strContactMethod" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUserRef1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUserRef2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strActive" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fAddNewMemberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fAddNewMemberResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fUpdateMember">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strMemberNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strJoinRef" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAppDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCommDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTitle" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strInit" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSurname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strBirthDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPassport" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMaritalStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTelHome" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTelWork" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTelCell" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTelFax" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPO1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPO2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPO3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPOCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strHome1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strHome2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strHome3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strHCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strNotes" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strBenName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strBenID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strBankName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strBankBranch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strBankCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAccNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAccType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAccDetails" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strJoinFeeDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMonthlyAction" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bLastDay" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPaymentFrequency" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPaymethod" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPersalNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPersalRef" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOccupation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEmployer" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEmpDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGroupName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strNationality" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSetPremium" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSetCover" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAgent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRep" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strBarcode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strContactMethod" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDeathDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUserRef1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUserRef2" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fUpdateMemberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fUpdateMemberResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fCancelMember">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strMemberNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strJoinRef" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCancelDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCancelReason" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fCancelMemberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fCancelMemberResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fReinstateMember">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strMemberNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strJoinRef" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCommenceDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRemoveProducts" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strNote" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSetJfPaid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSetCert" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSetPaymethod" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fReinstateMemberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fReinstateMemberResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fAddPremiumPayer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strMemberNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strJoinRef" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSurname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTitle" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTelCell" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTelHome" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTelWork" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPostalAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPostalCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPhysicalAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPhysicalCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRelType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strNationality" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMaritalStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strBankName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strBankBranch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strBankCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAccNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAccType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAccDetails" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMainMember" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strNotes" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fAddPremiumPayerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fAddPremiumPayerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fAddRelation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strMemberNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strJoinRef" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUniqueId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAppDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCommDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSurname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPassport" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strBirthdate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRelType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strNotes" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fAddRelationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fAddRelationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fUpdateRelation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strMemberNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strJoinRef" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRelationNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAppDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCommDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSurname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPassport" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strBirthdate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRelType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strNotes" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDeathDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fUpdateRelationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fUpdateRelationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fCancelRelation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strMemberNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strJoinRef" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRelationNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCancelDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCancelReason" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fCancelRelationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fCancelRelationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fAddBeneficiary">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strMemberNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strJoinRef" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSurname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPassport" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRelType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPercentage" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTelCell" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTelHome" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTelWork" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strNotes" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strBankName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strBankBranch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strBankCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAccNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAccType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fAddBeneficiaryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fAddBeneficiaryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fUpdateBeneficiary">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strMemberNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strJoinRef" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strBeneficiaryNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSurname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPassport" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRelType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPercentage" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTelCell" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTelHome" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTelWork" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strNotes" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strBankName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strBankBranch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strBankCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAccNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAccType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fUpdateBeneficiaryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fUpdateBeneficiaryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fReturnBeneficiaryDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strIDNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMemberNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strJoinRef" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fReturnBeneficiaryDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fReturnBeneficiaryDetailsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fReturnCardHolderFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="bUpdatedMembers" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fReturnCardHolderFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fReturnCardHolderFileResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fExistingPolicy">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strIDNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strBroker" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strBranch" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fExistingPolicyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fExistingPolicyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fExistingCover">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fExistingCoverResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fExistingCoverResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fReturnPolicySummary">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strIDNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMemberNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strJoinRef" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPassport" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strStartDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEndDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fReturnPolicySummaryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fReturnPolicySummaryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fReturnMemberDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strIDNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMemberNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strJoinRef" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPassport" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strStartDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEndDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fReturnMemberDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fReturnMemberDetailsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fAddNote">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strMemberNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strJoinRef" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strNote" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fAddNoteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fAddNoteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fReturnPolicyNotes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strIDNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMemberNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strJoinRef" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fReturnPolicyNotesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fReturnPolicyNotesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fAddDocterInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strMemberNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strJoinRef" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRelationNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPracticeNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDrName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDrSurname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPostalAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPostalCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPhysicalAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPhysicalCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strArea" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTelNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fAddDocterInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fAddDocterInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fAddNextOfKin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strMemberNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strJoinRef" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRelationNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSurname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strContact" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fAddNextOfKinResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fAddNextOfKinResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fAddAdditionalInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strMemberNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strJoinRef" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRelationNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strValue" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fAddAdditionalInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fAddAdditionalInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fAddMedicalInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strMemberNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strJoinRef" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRelationNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strNote" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fAddMedicalInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fAddMedicalInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fReturnMedicalInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strIDNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMemberNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strJoinRef" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRelationNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPassport" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fReturnMedicalInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fReturnMedicalInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fReturnMemberProducts">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strIDNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMemberNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strJoinRef" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPassport" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fReturnMemberProductsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fReturnMemberProductsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fReturnProductInformation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strSch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRelType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strBroker" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strBranch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAgent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRep" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fReturnProductInformationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fReturnProductInformationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fAddProduct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strMemberNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strJoinRef" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRelationNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strProduct" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strStartDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fAddProductResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fAddProductResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fUpdateProduct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strMemberNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strJoinRef" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRelationNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strStartDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEndDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fUpdateProductResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fUpdateProductResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fRemoveProduct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strMemberNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strJoinRef" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRelationNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strProduct" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEndDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fRemoveProductResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fRemoveProductResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fAddVariablePremium">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strMemberNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strJoinRef" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRelationNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPremium" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCover" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFactor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strNote" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fAddVariablePremiumResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fAddVariablePremiumResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fClaimLaunch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strMemberNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strJoinRef" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRelationNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strClaimDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strClaimAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strClaimReference" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strNotes" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fClaimLaunchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fClaimLaunchResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fClaimPending">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strClaimNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strNotes" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fClaimPendingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fClaimPendingResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fClaimApprove">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strClaimNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strNotes" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fClaimApproveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fClaimApproveResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fClaimDecline">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strClaimNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strNotes" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fClaimDeclineResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fClaimDeclineResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fClaimAuthorize">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strClaimNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strNotes" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fClaimAuthorizeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fClaimAuthorizeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fReturnPolicyImages">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strIDNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMemberNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strJoinRef" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPassport" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strStartDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEndDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fReturnPolicyImagesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fReturnPolicyImagesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fAddImage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strMemberNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strJoinRef" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFileType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="f" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fAddImageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fAddImageResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fGetImage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strMemberNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strJoinRef" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPicNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fGetImageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fGetImageResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fReturnPolicyCorrespondance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strIDNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMemberNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strJoinRef" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPassport" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strStartDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEndDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fReturnPolicyCorrespondanceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fReturnPolicyCorrespondanceResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fGetCorrespondance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strMemberNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strJoinRef" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDocNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fGetCorrespondanceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fGetCorrespondanceResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="About">
+        <s:complexType />
+      </s:element>
+      <s:element name="AboutResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AboutResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fIsDBOpen">
+        <s:complexType />
+      </s:element>
+      <s:element name="fIsDBOpenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fIsDBOpenResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="fPaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:fPayment" />
+  </wsdl:message>
+  <wsdl:message name="fPaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:fPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="fPaymentAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="fReturnPaymentDisputesSoapIn">
+    <wsdl:part name="parameters" element="tns:fReturnPaymentDisputes" />
+  </wsdl:message>
+  <wsdl:message name="fReturnPaymentDisputesSoapOut">
+    <wsdl:part name="parameters" element="tns:fReturnPaymentDisputesResponse" />
+  </wsdl:message>
+  <wsdl:message name="fReturnPaymentDisputesAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="fSendSMSSoapIn">
+    <wsdl:part name="parameters" element="tns:fSendSMS" />
+  </wsdl:message>
+  <wsdl:message name="fSendSMSSoapOut">
+    <wsdl:part name="parameters" element="tns:fSendSMSResponse" />
+  </wsdl:message>
+  <wsdl:message name="fSendSMSAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="fAuthRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:fAuthRequest" />
+  </wsdl:message>
+  <wsdl:message name="fAuthRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:fAuthRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="fAuthRequestAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="fAuthResponseSoapIn">
+    <wsdl:part name="parameters" element="tns:fAuthResponse" />
+  </wsdl:message>
+  <wsdl:message name="fAuthResponseSoapOut">
+    <wsdl:part name="parameters" element="tns:fAuthResponseResponse" />
+  </wsdl:message>
+  <wsdl:message name="fAuthResponseAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="fAddLeadStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:fAddLeadStatus" />
+  </wsdl:message>
+  <wsdl:message name="fAddLeadStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:fAddLeadStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="fAddLeadStatusAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="fReturnLeadsSoapIn">
+    <wsdl:part name="parameters" element="tns:fReturnLeads" />
+  </wsdl:message>
+  <wsdl:message name="fReturnLeadsSoapOut">
+    <wsdl:part name="parameters" element="tns:fReturnLeadsResponse" />
+  </wsdl:message>
+  <wsdl:message name="fReturnLeadsAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="fReturnFranchiseSoapIn">
+    <wsdl:part name="parameters" element="tns:fReturnFranchise" />
+  </wsdl:message>
+  <wsdl:message name="fReturnFranchiseSoapOut">
+    <wsdl:part name="parameters" element="tns:fReturnFranchiseResponse" />
+  </wsdl:message>
+  <wsdl:message name="fReturnFranchiseAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="fAddNewMemberSoapIn">
+    <wsdl:part name="parameters" element="tns:fAddNewMember" />
+  </wsdl:message>
+  <wsdl:message name="fAddNewMemberSoapOut">
+    <wsdl:part name="parameters" element="tns:fAddNewMemberResponse" />
+  </wsdl:message>
+  <wsdl:message name="fAddNewMemberAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="fUpdateMemberSoapIn">
+    <wsdl:part name="parameters" element="tns:fUpdateMember" />
+  </wsdl:message>
+  <wsdl:message name="fUpdateMemberSoapOut">
+    <wsdl:part name="parameters" element="tns:fUpdateMemberResponse" />
+  </wsdl:message>
+  <wsdl:message name="fUpdateMemberAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="fCancelMemberSoapIn">
+    <wsdl:part name="parameters" element="tns:fCancelMember" />
+  </wsdl:message>
+  <wsdl:message name="fCancelMemberSoapOut">
+    <wsdl:part name="parameters" element="tns:fCancelMemberResponse" />
+  </wsdl:message>
+  <wsdl:message name="fCancelMemberAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="fReinstateMemberSoapIn">
+    <wsdl:part name="parameters" element="tns:fReinstateMember" />
+  </wsdl:message>
+  <wsdl:message name="fReinstateMemberSoapOut">
+    <wsdl:part name="parameters" element="tns:fReinstateMemberResponse" />
+  </wsdl:message>
+  <wsdl:message name="fReinstateMemberAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="fAddPremiumPayerSoapIn">
+    <wsdl:part name="parameters" element="tns:fAddPremiumPayer" />
+  </wsdl:message>
+  <wsdl:message name="fAddPremiumPayerSoapOut">
+    <wsdl:part name="parameters" element="tns:fAddPremiumPayerResponse" />
+  </wsdl:message>
+  <wsdl:message name="fAddPremiumPayerAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="fAddRelationSoapIn">
+    <wsdl:part name="parameters" element="tns:fAddRelation" />
+  </wsdl:message>
+  <wsdl:message name="fAddRelationSoapOut">
+    <wsdl:part name="parameters" element="tns:fAddRelationResponse" />
+  </wsdl:message>
+  <wsdl:message name="fAddRelationAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="fUpdateRelationSoapIn">
+    <wsdl:part name="parameters" element="tns:fUpdateRelation" />
+  </wsdl:message>
+  <wsdl:message name="fUpdateRelationSoapOut">
+    <wsdl:part name="parameters" element="tns:fUpdateRelationResponse" />
+  </wsdl:message>
+  <wsdl:message name="fUpdateRelationAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="fCancelRelationSoapIn">
+    <wsdl:part name="parameters" element="tns:fCancelRelation" />
+  </wsdl:message>
+  <wsdl:message name="fCancelRelationSoapOut">
+    <wsdl:part name="parameters" element="tns:fCancelRelationResponse" />
+  </wsdl:message>
+  <wsdl:message name="fCancelRelationAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="fAddBeneficiarySoapIn">
+    <wsdl:part name="parameters" element="tns:fAddBeneficiary" />
+  </wsdl:message>
+  <wsdl:message name="fAddBeneficiarySoapOut">
+    <wsdl:part name="parameters" element="tns:fAddBeneficiaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="fAddBeneficiaryAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="fUpdateBeneficiarySoapIn">
+    <wsdl:part name="parameters" element="tns:fUpdateBeneficiary" />
+  </wsdl:message>
+  <wsdl:message name="fUpdateBeneficiarySoapOut">
+    <wsdl:part name="parameters" element="tns:fUpdateBeneficiaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="fUpdateBeneficiaryAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="fReturnBeneficiaryDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:fReturnBeneficiaryDetails" />
+  </wsdl:message>
+  <wsdl:message name="fReturnBeneficiaryDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:fReturnBeneficiaryDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="fReturnBeneficiaryDetailsAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="fReturnCardHolderFileSoapIn">
+    <wsdl:part name="parameters" element="tns:fReturnCardHolderFile" />
+  </wsdl:message>
+  <wsdl:message name="fReturnCardHolderFileSoapOut">
+    <wsdl:part name="parameters" element="tns:fReturnCardHolderFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="fReturnCardHolderFileAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="fExistingPolicySoapIn">
+    <wsdl:part name="parameters" element="tns:fExistingPolicy" />
+  </wsdl:message>
+  <wsdl:message name="fExistingPolicySoapOut">
+    <wsdl:part name="parameters" element="tns:fExistingPolicyResponse" />
+  </wsdl:message>
+  <wsdl:message name="fExistingPolicyAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="fExistingCoverSoapIn">
+    <wsdl:part name="parameters" element="tns:fExistingCover" />
+  </wsdl:message>
+  <wsdl:message name="fExistingCoverSoapOut">
+    <wsdl:part name="parameters" element="tns:fExistingCoverResponse" />
+  </wsdl:message>
+  <wsdl:message name="fExistingCoverAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="fReturnPolicySummarySoapIn">
+    <wsdl:part name="parameters" element="tns:fReturnPolicySummary" />
+  </wsdl:message>
+  <wsdl:message name="fReturnPolicySummarySoapOut">
+    <wsdl:part name="parameters" element="tns:fReturnPolicySummaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="fReturnPolicySummaryAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="fReturnMemberDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:fReturnMemberDetails" />
+  </wsdl:message>
+  <wsdl:message name="fReturnMemberDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:fReturnMemberDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="fReturnMemberDetailsAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="fAddNoteSoapIn">
+    <wsdl:part name="parameters" element="tns:fAddNote" />
+  </wsdl:message>
+  <wsdl:message name="fAddNoteSoapOut">
+    <wsdl:part name="parameters" element="tns:fAddNoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="fAddNoteAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="fReturnPolicyNotesSoapIn">
+    <wsdl:part name="parameters" element="tns:fReturnPolicyNotes" />
+  </wsdl:message>
+  <wsdl:message name="fReturnPolicyNotesSoapOut">
+    <wsdl:part name="parameters" element="tns:fReturnPolicyNotesResponse" />
+  </wsdl:message>
+  <wsdl:message name="fReturnPolicyNotesAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="fAddDocterInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:fAddDocterInfo" />
+  </wsdl:message>
+  <wsdl:message name="fAddDocterInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:fAddDocterInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="fAddDocterInfoAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="fAddNextOfKinSoapIn">
+    <wsdl:part name="parameters" element="tns:fAddNextOfKin" />
+  </wsdl:message>
+  <wsdl:message name="fAddNextOfKinSoapOut">
+    <wsdl:part name="parameters" element="tns:fAddNextOfKinResponse" />
+  </wsdl:message>
+  <wsdl:message name="fAddNextOfKinAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="fAddAdditionalInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:fAddAdditionalInfo" />
+  </wsdl:message>
+  <wsdl:message name="fAddAdditionalInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:fAddAdditionalInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="fAddAdditionalInfoAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="fAddMedicalInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:fAddMedicalInfo" />
+  </wsdl:message>
+  <wsdl:message name="fAddMedicalInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:fAddMedicalInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="fAddMedicalInfoAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="fReturnMedicalInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:fReturnMedicalInfo" />
+  </wsdl:message>
+  <wsdl:message name="fReturnMedicalInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:fReturnMedicalInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="fReturnMedicalInfoAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="fReturnMemberProductsSoapIn">
+    <wsdl:part name="parameters" element="tns:fReturnMemberProducts" />
+  </wsdl:message>
+  <wsdl:message name="fReturnMemberProductsSoapOut">
+    <wsdl:part name="parameters" element="tns:fReturnMemberProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="fReturnMemberProductsAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="fReturnProductInformationSoapIn">
+    <wsdl:part name="parameters" element="tns:fReturnProductInformation" />
+  </wsdl:message>
+  <wsdl:message name="fReturnProductInformationSoapOut">
+    <wsdl:part name="parameters" element="tns:fReturnProductInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="fReturnProductInformationAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="fAddProductSoapIn">
+    <wsdl:part name="parameters" element="tns:fAddProduct" />
+  </wsdl:message>
+  <wsdl:message name="fAddProductSoapOut">
+    <wsdl:part name="parameters" element="tns:fAddProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="fAddProductAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="fUpdateProductSoapIn">
+    <wsdl:part name="parameters" element="tns:fUpdateProduct" />
+  </wsdl:message>
+  <wsdl:message name="fUpdateProductSoapOut">
+    <wsdl:part name="parameters" element="tns:fUpdateProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="fUpdateProductAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="fRemoveProductSoapIn">
+    <wsdl:part name="parameters" element="tns:fRemoveProduct" />
+  </wsdl:message>
+  <wsdl:message name="fRemoveProductSoapOut">
+    <wsdl:part name="parameters" element="tns:fRemoveProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="fRemoveProductAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="fAddVariablePremiumSoapIn">
+    <wsdl:part name="parameters" element="tns:fAddVariablePremium" />
+  </wsdl:message>
+  <wsdl:message name="fAddVariablePremiumSoapOut">
+    <wsdl:part name="parameters" element="tns:fAddVariablePremiumResponse" />
+  </wsdl:message>
+  <wsdl:message name="fAddVariablePremiumAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="fClaimLaunchSoapIn">
+    <wsdl:part name="parameters" element="tns:fClaimLaunch" />
+  </wsdl:message>
+  <wsdl:message name="fClaimLaunchSoapOut">
+    <wsdl:part name="parameters" element="tns:fClaimLaunchResponse" />
+  </wsdl:message>
+  <wsdl:message name="fClaimLaunchAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="fClaimPendingSoapIn">
+    <wsdl:part name="parameters" element="tns:fClaimPending" />
+  </wsdl:message>
+  <wsdl:message name="fClaimPendingSoapOut">
+    <wsdl:part name="parameters" element="tns:fClaimPendingResponse" />
+  </wsdl:message>
+  <wsdl:message name="fClaimPendingAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="fClaimApproveSoapIn">
+    <wsdl:part name="parameters" element="tns:fClaimApprove" />
+  </wsdl:message>
+  <wsdl:message name="fClaimApproveSoapOut">
+    <wsdl:part name="parameters" element="tns:fClaimApproveResponse" />
+  </wsdl:message>
+  <wsdl:message name="fClaimApproveAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="fClaimDeclineSoapIn">
+    <wsdl:part name="parameters" element="tns:fClaimDecline" />
+  </wsdl:message>
+  <wsdl:message name="fClaimDeclineSoapOut">
+    <wsdl:part name="parameters" element="tns:fClaimDeclineResponse" />
+  </wsdl:message>
+  <wsdl:message name="fClaimDeclineAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="fClaimAuthorizeSoapIn">
+    <wsdl:part name="parameters" element="tns:fClaimAuthorize" />
+  </wsdl:message>
+  <wsdl:message name="fClaimAuthorizeSoapOut">
+    <wsdl:part name="parameters" element="tns:fClaimAuthorizeResponse" />
+  </wsdl:message>
+  <wsdl:message name="fClaimAuthorizeAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="fReturnPolicyImagesSoapIn">
+    <wsdl:part name="parameters" element="tns:fReturnPolicyImages" />
+  </wsdl:message>
+  <wsdl:message name="fReturnPolicyImagesSoapOut">
+    <wsdl:part name="parameters" element="tns:fReturnPolicyImagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="fReturnPolicyImagesAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="fAddImageSoapIn">
+    <wsdl:part name="parameters" element="tns:fAddImage" />
+  </wsdl:message>
+  <wsdl:message name="fAddImageSoapOut">
+    <wsdl:part name="parameters" element="tns:fAddImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="fAddImageAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="fGetImageSoapIn">
+    <wsdl:part name="parameters" element="tns:fGetImage" />
+  </wsdl:message>
+  <wsdl:message name="fGetImageSoapOut">
+    <wsdl:part name="parameters" element="tns:fGetImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="fGetImageAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="fReturnPolicyCorrespondanceSoapIn">
+    <wsdl:part name="parameters" element="tns:fReturnPolicyCorrespondance" />
+  </wsdl:message>
+  <wsdl:message name="fReturnPolicyCorrespondanceSoapOut">
+    <wsdl:part name="parameters" element="tns:fReturnPolicyCorrespondanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="fReturnPolicyCorrespondanceAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="fGetCorrespondanceSoapIn">
+    <wsdl:part name="parameters" element="tns:fGetCorrespondance" />
+  </wsdl:message>
+  <wsdl:message name="fGetCorrespondanceSoapOut">
+    <wsdl:part name="parameters" element="tns:fGetCorrespondanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="fGetCorrespondanceAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="AboutSoapIn">
+    <wsdl:part name="parameters" element="tns:About" />
+  </wsdl:message>
+  <wsdl:message name="AboutSoapOut">
+    <wsdl:part name="parameters" element="tns:AboutResponse" />
+  </wsdl:message>
+  <wsdl:message name="fIsDBOpenSoapIn">
+    <wsdl:part name="parameters" element="tns:fIsDBOpen" />
+  </wsdl:message>
+  <wsdl:message name="fIsDBOpenSoapOut">
+    <wsdl:part name="parameters" element="tns:fIsDBOpenResponse" />
+  </wsdl:message>
+  <wsdl:message name="fIsDBOpenAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:portType name="Service10Soap">
+    <wsdl:operation name="fPayment">
+      <wsdl:input message="tns:fPaymentSoapIn" />
+      <wsdl:output message="tns:fPaymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fReturnPaymentDisputes">
+      <wsdl:input message="tns:fReturnPaymentDisputesSoapIn" />
+      <wsdl:output message="tns:fReturnPaymentDisputesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fSendSMS">
+      <wsdl:input message="tns:fSendSMSSoapIn" />
+      <wsdl:output message="tns:fSendSMSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fAuthRequest">
+      <wsdl:input message="tns:fAuthRequestSoapIn" />
+      <wsdl:output message="tns:fAuthRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fAuthResponse">
+      <wsdl:input message="tns:fAuthResponseSoapIn" />
+      <wsdl:output message="tns:fAuthResponseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fAddLeadStatus">
+      <wsdl:input message="tns:fAddLeadStatusSoapIn" />
+      <wsdl:output message="tns:fAddLeadStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fReturnLeads">
+      <wsdl:input message="tns:fReturnLeadsSoapIn" />
+      <wsdl:output message="tns:fReturnLeadsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fReturnFranchise">
+      <wsdl:input message="tns:fReturnFranchiseSoapIn" />
+      <wsdl:output message="tns:fReturnFranchiseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fAddNewMember">
+      <wsdl:input message="tns:fAddNewMemberSoapIn" />
+      <wsdl:output message="tns:fAddNewMemberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fUpdateMember">
+      <wsdl:input message="tns:fUpdateMemberSoapIn" />
+      <wsdl:output message="tns:fUpdateMemberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fCancelMember">
+      <wsdl:input message="tns:fCancelMemberSoapIn" />
+      <wsdl:output message="tns:fCancelMemberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fReinstateMember">
+      <wsdl:input message="tns:fReinstateMemberSoapIn" />
+      <wsdl:output message="tns:fReinstateMemberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fAddPremiumPayer">
+      <wsdl:input message="tns:fAddPremiumPayerSoapIn" />
+      <wsdl:output message="tns:fAddPremiumPayerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fAddRelation">
+      <wsdl:input message="tns:fAddRelationSoapIn" />
+      <wsdl:output message="tns:fAddRelationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fUpdateRelation">
+      <wsdl:input message="tns:fUpdateRelationSoapIn" />
+      <wsdl:output message="tns:fUpdateRelationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fCancelRelation">
+      <wsdl:input message="tns:fCancelRelationSoapIn" />
+      <wsdl:output message="tns:fCancelRelationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fAddBeneficiary">
+      <wsdl:input message="tns:fAddBeneficiarySoapIn" />
+      <wsdl:output message="tns:fAddBeneficiarySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fUpdateBeneficiary">
+      <wsdl:input message="tns:fUpdateBeneficiarySoapIn" />
+      <wsdl:output message="tns:fUpdateBeneficiarySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fReturnBeneficiaryDetails">
+      <wsdl:input message="tns:fReturnBeneficiaryDetailsSoapIn" />
+      <wsdl:output message="tns:fReturnBeneficiaryDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fReturnCardHolderFile">
+      <wsdl:input message="tns:fReturnCardHolderFileSoapIn" />
+      <wsdl:output message="tns:fReturnCardHolderFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fExistingPolicy">
+      <wsdl:input message="tns:fExistingPolicySoapIn" />
+      <wsdl:output message="tns:fExistingPolicySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fExistingCover">
+      <wsdl:input message="tns:fExistingCoverSoapIn" />
+      <wsdl:output message="tns:fExistingCoverSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fReturnPolicySummary">
+      <wsdl:input message="tns:fReturnPolicySummarySoapIn" />
+      <wsdl:output message="tns:fReturnPolicySummarySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fReturnMemberDetails">
+      <wsdl:input message="tns:fReturnMemberDetailsSoapIn" />
+      <wsdl:output message="tns:fReturnMemberDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fAddNote">
+      <wsdl:input message="tns:fAddNoteSoapIn" />
+      <wsdl:output message="tns:fAddNoteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fReturnPolicyNotes">
+      <wsdl:input message="tns:fReturnPolicyNotesSoapIn" />
+      <wsdl:output message="tns:fReturnPolicyNotesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fAddDocterInfo">
+      <wsdl:input message="tns:fAddDocterInfoSoapIn" />
+      <wsdl:output message="tns:fAddDocterInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fAddNextOfKin">
+      <wsdl:input message="tns:fAddNextOfKinSoapIn" />
+      <wsdl:output message="tns:fAddNextOfKinSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fAddAdditionalInfo">
+      <wsdl:input message="tns:fAddAdditionalInfoSoapIn" />
+      <wsdl:output message="tns:fAddAdditionalInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fAddMedicalInfo">
+      <wsdl:input message="tns:fAddMedicalInfoSoapIn" />
+      <wsdl:output message="tns:fAddMedicalInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fReturnMedicalInfo">
+      <wsdl:input message="tns:fReturnMedicalInfoSoapIn" />
+      <wsdl:output message="tns:fReturnMedicalInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fReturnMemberProducts">
+      <wsdl:input message="tns:fReturnMemberProductsSoapIn" />
+      <wsdl:output message="tns:fReturnMemberProductsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fReturnProductInformation">
+      <wsdl:input message="tns:fReturnProductInformationSoapIn" />
+      <wsdl:output message="tns:fReturnProductInformationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fAddProduct">
+      <wsdl:input message="tns:fAddProductSoapIn" />
+      <wsdl:output message="tns:fAddProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fUpdateProduct">
+      <wsdl:input message="tns:fUpdateProductSoapIn" />
+      <wsdl:output message="tns:fUpdateProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fRemoveProduct">
+      <wsdl:input message="tns:fRemoveProductSoapIn" />
+      <wsdl:output message="tns:fRemoveProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fAddVariablePremium">
+      <wsdl:input message="tns:fAddVariablePremiumSoapIn" />
+      <wsdl:output message="tns:fAddVariablePremiumSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fClaimLaunch">
+      <wsdl:input message="tns:fClaimLaunchSoapIn" />
+      <wsdl:output message="tns:fClaimLaunchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fClaimPending">
+      <wsdl:input message="tns:fClaimPendingSoapIn" />
+      <wsdl:output message="tns:fClaimPendingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fClaimApprove">
+      <wsdl:input message="tns:fClaimApproveSoapIn" />
+      <wsdl:output message="tns:fClaimApproveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fClaimDecline">
+      <wsdl:input message="tns:fClaimDeclineSoapIn" />
+      <wsdl:output message="tns:fClaimDeclineSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fClaimAuthorize">
+      <wsdl:input message="tns:fClaimAuthorizeSoapIn" />
+      <wsdl:output message="tns:fClaimAuthorizeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fReturnPolicyImages">
+      <wsdl:input message="tns:fReturnPolicyImagesSoapIn" />
+      <wsdl:output message="tns:fReturnPolicyImagesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fAddImage">
+      <wsdl:input message="tns:fAddImageSoapIn" />
+      <wsdl:output message="tns:fAddImageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fGetImage">
+      <wsdl:input message="tns:fGetImageSoapIn" />
+      <wsdl:output message="tns:fGetImageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fReturnPolicyCorrespondance">
+      <wsdl:input message="tns:fReturnPolicyCorrespondanceSoapIn" />
+      <wsdl:output message="tns:fReturnPolicyCorrespondanceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fGetCorrespondance">
+      <wsdl:input message="tns:fGetCorrespondanceSoapIn" />
+      <wsdl:output message="tns:fGetCorrespondanceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="About">
+      <wsdl:input message="tns:AboutSoapIn" />
+      <wsdl:output message="tns:AboutSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fIsDBOpen">
+      <wsdl:input message="tns:fIsDBOpenSoapIn" />
+      <wsdl:output message="tns:fIsDBOpenSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Service10Soap" type="tns:Service10Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="fPayment">
+      <soap:operation soapAction="http://phakama.co.za/webservices/fPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:fPaymentAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fReturnPaymentDisputes">
+      <soap:operation soapAction="http://phakama.co.za/webservices/fReturnPaymentDisputes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:fReturnPaymentDisputesAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fSendSMS">
+      <soap:operation soapAction="http://phakama.co.za/webservices/fSendSMS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:fSendSMSAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fAuthRequest">
+      <soap:operation soapAction="http://phakama.co.za/webservices/fAuthRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:fAuthRequestAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fAuthResponse">
+      <soap:operation soapAction="http://phakama.co.za/webservices/fAuthResponse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:fAuthResponseAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fAddLeadStatus">
+      <soap:operation soapAction="http://phakama.co.za/webservices/fAddLeadStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:fAddLeadStatusAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fReturnLeads">
+      <soap:operation soapAction="http://phakama.co.za/webservices/fReturnLeads" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:fReturnLeadsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fReturnFranchise">
+      <soap:operation soapAction="http://phakama.co.za/webservices/fReturnFranchise" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:fReturnFranchiseAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fAddNewMember">
+      <soap:operation soapAction="http://phakama.co.za/webservices/fAddNewMember" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:fAddNewMemberAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fUpdateMember">
+      <soap:operation soapAction="http://phakama.co.za/webservices/fUpdateMember" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:fUpdateMemberAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fCancelMember">
+      <soap:operation soapAction="http://phakama.co.za/webservices/fCancelMember" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:fCancelMemberAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fReinstateMember">
+      <soap:operation soapAction="http://phakama.co.za/webservices/fReinstateMember" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:fReinstateMemberAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fAddPremiumPayer">
+      <soap:operation soapAction="http://phakama.co.za/webservices/fAddPremiumPayer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:fAddPremiumPayerAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fAddRelation">
+      <soap:operation soapAction="http://phakama.co.za/webservices/fAddRelation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:fAddRelationAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fUpdateRelation">
+      <soap:operation soapAction="http://phakama.co.za/webservices/fUpdateRelation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:fUpdateRelationAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fCancelRelation">
+      <soap:operation soapAction="http://phakama.co.za/webservices/fCancelRelation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:fCancelRelationAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fAddBeneficiary">
+      <soap:operation soapAction="http://phakama.co.za/webservices/fAddBeneficiary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:fAddBeneficiaryAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fUpdateBeneficiary">
+      <soap:operation soapAction="http://phakama.co.za/webservices/fUpdateBeneficiary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:fUpdateBeneficiaryAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fReturnBeneficiaryDetails">
+      <soap:operation soapAction="http://phakama.co.za/webservices/fReturnBeneficiaryDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:fReturnBeneficiaryDetailsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fReturnCardHolderFile">
+      <soap:operation soapAction="http://phakama.co.za/webservices/fReturnCardHolderFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:fReturnCardHolderFileAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fExistingPolicy">
+      <soap:operation soapAction="http://phakama.co.za/webservices/fExistingPolicy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:fExistingPolicyAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fExistingCover">
+      <soap:operation soapAction="http://phakama.co.za/webservices/fExistingCover" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:fExistingCoverAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fReturnPolicySummary">
+      <soap:operation soapAction="http://phakama.co.za/webservices/fReturnPolicySummary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:fReturnPolicySummaryAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fReturnMemberDetails">
+      <soap:operation soapAction="http://phakama.co.za/webservices/fReturnMemberDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:fReturnMemberDetailsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fAddNote">
+      <soap:operation soapAction="http://phakama.co.za/webservices/fAddNote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:fAddNoteAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fReturnPolicyNotes">
+      <soap:operation soapAction="http://phakama.co.za/webservices/fReturnPolicyNotes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:fReturnPolicyNotesAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fAddDocterInfo">
+      <soap:operation soapAction="http://phakama.co.za/webservices/fAddDocterInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:fAddDocterInfoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fAddNextOfKin">
+      <soap:operation soapAction="http://phakama.co.za/webservices/fAddNextOfKin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:fAddNextOfKinAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fAddAdditionalInfo">
+      <soap:operation soapAction="http://phakama.co.za/webservices/fAddAdditionalInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:fAddAdditionalInfoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fAddMedicalInfo">
+      <soap:operation soapAction="http://phakama.co.za/webservices/fAddMedicalInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:fAddMedicalInfoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fReturnMedicalInfo">
+      <soap:operation soapAction="http://phakama.co.za/webservices/fReturnMedicalInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:fReturnMedicalInfoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fReturnMemberProducts">
+      <soap:operation soapAction="http://phakama.co.za/webservices/fReturnMemberProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:fReturnMemberProductsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fReturnProductInformation">
+      <soap:operation soapAction="http://phakama.co.za/webservices/fReturnProductInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:fReturnProductInformationAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fAddProduct">
+      <soap:operation soapAction="http://phakama.co.za/webservices/fAddProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:fAddProductAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fUpdateProduct">
+      <soap:operation soapAction="http://phakama.co.za/webservices/fUpdateProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:fUpdateProductAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fRemoveProduct">
+      <soap:operation soapAction="http://phakama.co.za/webservices/fRemoveProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:fRemoveProductAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fAddVariablePremium">
+      <soap:operation soapAction="http://phakama.co.za/webservices/fAddVariablePremium" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:fAddVariablePremiumAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fClaimLaunch">
+      <soap:operation soapAction="http://phakama.co.za/webservices/fClaimLaunch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:fClaimLaunchAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fClaimPending">
+      <soap:operation soapAction="http://phakama.co.za/webservices/fClaimPending" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:fClaimPendingAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fClaimApprove">
+      <soap:operation soapAction="http://phakama.co.za/webservices/fClaimApprove" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:fClaimApproveAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fClaimDecline">
+      <soap:operation soapAction="http://phakama.co.za/webservices/fClaimDecline" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:fClaimDeclineAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fClaimAuthorize">
+      <soap:operation soapAction="http://phakama.co.za/webservices/fClaimAuthorize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:fClaimAuthorizeAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fReturnPolicyImages">
+      <soap:operation soapAction="http://phakama.co.za/webservices/fReturnPolicyImages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:fReturnPolicyImagesAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fAddImage">
+      <soap:operation soapAction="http://phakama.co.za/webservices/fAddImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:fAddImageAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fGetImage">
+      <soap:operation soapAction="http://phakama.co.za/webservices/fGetImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:fGetImageAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fReturnPolicyCorrespondance">
+      <soap:operation soapAction="http://phakama.co.za/webservices/fReturnPolicyCorrespondance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:fReturnPolicyCorrespondanceAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fGetCorrespondance">
+      <soap:operation soapAction="http://phakama.co.za/webservices/fGetCorrespondance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:fGetCorrespondanceAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="About">
+      <soap:operation soapAction="http://phakama.co.za/webservices/About" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fIsDBOpen">
+      <soap:operation soapAction="http://phakama.co.za/webservices/fIsDBOpen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:fIsDBOpenAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Service10Soap12" type="tns:Service10Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="fPayment">
+      <soap12:operation soapAction="http://phakama.co.za/webservices/fPayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:fPaymentAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fReturnPaymentDisputes">
+      <soap12:operation soapAction="http://phakama.co.za/webservices/fReturnPaymentDisputes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:fReturnPaymentDisputesAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fSendSMS">
+      <soap12:operation soapAction="http://phakama.co.za/webservices/fSendSMS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:fSendSMSAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fAuthRequest">
+      <soap12:operation soapAction="http://phakama.co.za/webservices/fAuthRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:fAuthRequestAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fAuthResponse">
+      <soap12:operation soapAction="http://phakama.co.za/webservices/fAuthResponse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:fAuthResponseAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fAddLeadStatus">
+      <soap12:operation soapAction="http://phakama.co.za/webservices/fAddLeadStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:fAddLeadStatusAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fReturnLeads">
+      <soap12:operation soapAction="http://phakama.co.za/webservices/fReturnLeads" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:fReturnLeadsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fReturnFranchise">
+      <soap12:operation soapAction="http://phakama.co.za/webservices/fReturnFranchise" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:fReturnFranchiseAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fAddNewMember">
+      <soap12:operation soapAction="http://phakama.co.za/webservices/fAddNewMember" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:fAddNewMemberAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fUpdateMember">
+      <soap12:operation soapAction="http://phakama.co.za/webservices/fUpdateMember" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:fUpdateMemberAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fCancelMember">
+      <soap12:operation soapAction="http://phakama.co.za/webservices/fCancelMember" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:fCancelMemberAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fReinstateMember">
+      <soap12:operation soapAction="http://phakama.co.za/webservices/fReinstateMember" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:fReinstateMemberAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fAddPremiumPayer">
+      <soap12:operation soapAction="http://phakama.co.za/webservices/fAddPremiumPayer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:fAddPremiumPayerAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fAddRelation">
+      <soap12:operation soapAction="http://phakama.co.za/webservices/fAddRelation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:fAddRelationAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fUpdateRelation">
+      <soap12:operation soapAction="http://phakama.co.za/webservices/fUpdateRelation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:fUpdateRelationAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fCancelRelation">
+      <soap12:operation soapAction="http://phakama.co.za/webservices/fCancelRelation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:fCancelRelationAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fAddBeneficiary">
+      <soap12:operation soapAction="http://phakama.co.za/webservices/fAddBeneficiary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:fAddBeneficiaryAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fUpdateBeneficiary">
+      <soap12:operation soapAction="http://phakama.co.za/webservices/fUpdateBeneficiary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:fUpdateBeneficiaryAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fReturnBeneficiaryDetails">
+      <soap12:operation soapAction="http://phakama.co.za/webservices/fReturnBeneficiaryDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:fReturnBeneficiaryDetailsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fReturnCardHolderFile">
+      <soap12:operation soapAction="http://phakama.co.za/webservices/fReturnCardHolderFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:fReturnCardHolderFileAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fExistingPolicy">
+      <soap12:operation soapAction="http://phakama.co.za/webservices/fExistingPolicy" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:fExistingPolicyAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fExistingCover">
+      <soap12:operation soapAction="http://phakama.co.za/webservices/fExistingCover" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:fExistingCoverAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fReturnPolicySummary">
+      <soap12:operation soapAction="http://phakama.co.za/webservices/fReturnPolicySummary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:fReturnPolicySummaryAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fReturnMemberDetails">
+      <soap12:operation soapAction="http://phakama.co.za/webservices/fReturnMemberDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:fReturnMemberDetailsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fAddNote">
+      <soap12:operation soapAction="http://phakama.co.za/webservices/fAddNote" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:fAddNoteAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fReturnPolicyNotes">
+      <soap12:operation soapAction="http://phakama.co.za/webservices/fReturnPolicyNotes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:fReturnPolicyNotesAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fAddDocterInfo">
+      <soap12:operation soapAction="http://phakama.co.za/webservices/fAddDocterInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:fAddDocterInfoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fAddNextOfKin">
+      <soap12:operation soapAction="http://phakama.co.za/webservices/fAddNextOfKin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:fAddNextOfKinAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fAddAdditionalInfo">
+      <soap12:operation soapAction="http://phakama.co.za/webservices/fAddAdditionalInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:fAddAdditionalInfoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fAddMedicalInfo">
+      <soap12:operation soapAction="http://phakama.co.za/webservices/fAddMedicalInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:fAddMedicalInfoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fReturnMedicalInfo">
+      <soap12:operation soapAction="http://phakama.co.za/webservices/fReturnMedicalInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:fReturnMedicalInfoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fReturnMemberProducts">
+      <soap12:operation soapAction="http://phakama.co.za/webservices/fReturnMemberProducts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:fReturnMemberProductsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fReturnProductInformation">
+      <soap12:operation soapAction="http://phakama.co.za/webservices/fReturnProductInformation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:fReturnProductInformationAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fAddProduct">
+      <soap12:operation soapAction="http://phakama.co.za/webservices/fAddProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:fAddProductAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fUpdateProduct">
+      <soap12:operation soapAction="http://phakama.co.za/webservices/fUpdateProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:fUpdateProductAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fRemoveProduct">
+      <soap12:operation soapAction="http://phakama.co.za/webservices/fRemoveProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:fRemoveProductAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fAddVariablePremium">
+      <soap12:operation soapAction="http://phakama.co.za/webservices/fAddVariablePremium" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:fAddVariablePremiumAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fClaimLaunch">
+      <soap12:operation soapAction="http://phakama.co.za/webservices/fClaimLaunch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:fClaimLaunchAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fClaimPending">
+      <soap12:operation soapAction="http://phakama.co.za/webservices/fClaimPending" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:fClaimPendingAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fClaimApprove">
+      <soap12:operation soapAction="http://phakama.co.za/webservices/fClaimApprove" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:fClaimApproveAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fClaimDecline">
+      <soap12:operation soapAction="http://phakama.co.za/webservices/fClaimDecline" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:fClaimDeclineAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fClaimAuthorize">
+      <soap12:operation soapAction="http://phakama.co.za/webservices/fClaimAuthorize" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:fClaimAuthorizeAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fReturnPolicyImages">
+      <soap12:operation soapAction="http://phakama.co.za/webservices/fReturnPolicyImages" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:fReturnPolicyImagesAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fAddImage">
+      <soap12:operation soapAction="http://phakama.co.za/webservices/fAddImage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:fAddImageAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fGetImage">
+      <soap12:operation soapAction="http://phakama.co.za/webservices/fGetImage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:fGetImageAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fReturnPolicyCorrespondance">
+      <soap12:operation soapAction="http://phakama.co.za/webservices/fReturnPolicyCorrespondance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:fReturnPolicyCorrespondanceAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fGetCorrespondance">
+      <soap12:operation soapAction="http://phakama.co.za/webservices/fGetCorrespondance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:fGetCorrespondanceAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="About">
+      <soap12:operation soapAction="http://phakama.co.za/webservices/About" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fIsDBOpen">
+      <soap12:operation soapAction="http://phakama.co.za/webservices/fIsDBOpen" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:fIsDBOpenAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service10">
+    <wsdl:port name="Service10Soap" binding="tns:Service10Soap">
+      <soap:address location="https://service.adsol.co.za/service/service10.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Service10Soap12" binding="tns:Service10Soap12">
+      <soap12:address location="https://service.adsol.co.za/service/service10.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

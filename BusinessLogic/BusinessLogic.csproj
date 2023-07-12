@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{01D7C8C5-9131-4C24-BDAB-2648BC857599}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BusinessLogic</RootNamespace>
+    <AssemblyName>BusinessLogic</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Utils.Logger">
+      <HintPath>..\..\..\..\..\..\..\Assemblies\Utils.Logger.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bank.cs" />
+    <Compile Include="BankDetails.cs" />
+    <Compile Include="Batch.cs" />
+    <Compile Include="Campaign.cs" />
+    <Compile Include="CampaignBenefits.cs" />
+    <Compile Include="CampaignRelationshipType.cs" />
+    <Compile Include="CampaignRelationshipTypeFNB.cs" />
+    <Compile Include="CampaignSubMemberType.cs" />
+    <Compile Include="Campaigns\EDCON\Products.cs" />
+    <Compile Include="Campaigns\EDCON\ProductTypes.cs" />
+    <Compile Include="Campaigns\EDCON\SaleType.cs" />
+    <Compile Include="Campaigns\FNB\CampaignBenefitsFNB.cs" />
+    <Compile Include="Campaigns\FNB\FNBBundleType.cs" />
+    <Compile Include="Campaigns\MCA\ProductsACT.cs" />
+    <Compile Include="Campaigns\MCA\ProductsBOX.cs" />
+    <Compile Include="Campaigns\MCA\ProductsDSTVIDP.cs" />
+    <Compile Include="Campaigns\MCA\ProductsEXBUP.cs" />
+    <Compile Include="Campaigns\MCA\ProductsGEU.cs" />
+    <Compile Include="Campaigns\MCA\ProductsMBC2.cs" />
+    <Compile Include="Campaigns\MCA\ProductsPLCAT.cs" />
+    <Compile Include="Campaigns\MCA\ProductsPLGEN.cs" />
+    <Compile Include="Campaigns\MCA\ProductsPLPOC.cs" />
+    <Compile Include="Campaigns\MCA\ProductsPLSD.cs" />
+    <Compile Include="Campaigns\MCA\ProductsPLSED.cs" />
+    <Compile Include="Campaigns\MCA\ProductsPSLUG.cs" />
+    <Compile Include="Campaigns\MCA\ProductsSEICP.cs" />
+    <Compile Include="Campaigns\MCA\ProductsSLPOC.cs" />
+    <Compile Include="Campaigns\MCA\ProductsSMSU2.cs" />
+    <Compile Include="Campaigns\MCA\ProductsWEBLP.cs" />
+    <Compile Include="Campaigns\MCA\SaleDetailsACT.cs" />
+    <Compile Include="Campaigns\MCA\SaleDetailsBOX.cs" />
+    <Compile Include="Campaigns\MCA\SaleDetailsDOHL2.cs" />
+    <Compile Include="Campaigns\MCA\SaleDetailsDSTVIDP.cs" />
+    <Compile Include="Campaigns\MCA\SaleDetailsEXBUP.cs" />
+    <Compile Include="Campaigns\MCA\SaleDetailsGEU.cs" />
+    <Compile Include="Campaigns\MCA\SaleDetailsMBC2.cs" />
+    <Compile Include="Campaigns\MCA\ProductsCOMP.cs" />
+    <Compile Include="Campaigns\MCA\SaleDetailsCOMP.cs" />
+    <Compile Include="Campaigns\MCA\SaleDetailsPLCAT.cs" />
+    <Compile Include="Campaigns\MCA\SaleDetailsPLGEN.cs" />
+    <Compile Include="Campaigns\MCA\SaleDetailsPLPOC.cs" />
+    <Compile Include="Campaigns\MCA\SaleDetailsPLSD.cs" />
+    <Compile Include="Campaigns\MCA\SaleDetailsPLSED.cs" />
+    <Compile Include="Campaigns\MCA\SaleDetailsPSLUG.cs" />
+    <Compile Include="Campaigns\MCA\SaleDetailsSEICP.cs" />
+    <Compile Include="Campaigns\MCA\SaleDetailsSLPOC.cs" />
+    <Compile Include="Campaigns\MCA\SaleDetailsSMSU2.cs" />
+    <Compile Include="Campaigns\MCA\SaleDetailsWEBLP.cs" />
+    <Compile Include="Campaigns\ROADCOVER\RoadCoverProductCatalog.cs" />
+    <Compile Include="Campaigns\ROADCOVER\SaleDetailsRCABSA4.cs" />
+    <Compile Include="Province.cs" />
+    <Compile Include="RevolvingFacilities.cs" />
+    <Compile Include="Campaigns\MCA\DPPOffer.cs" />
+    <Compile Include="Campaigns\MCA\InstallationsRequirements.cs" />
+    <Compile Include="Campaigns\MCA\Packages.cs" />
+    <Compile Include="Campaigns\MCA\ProductsECOMM.cs" />
+    <Compile Include="Campaigns\MCA\RetentionOffer.cs" />
+    <Compile Include="Campaigns\MCA\SaleDetails.cs" />
+    <Compile Include="Campaigns\MCA\SaleDetailsECOMM.cs" />
+    <Compile Include="Campaigns\rcnedd.cs" />
+    <Compile Include="Campaigns\VODACOM\AllocatedDevices.cs" />
+    <Compile Include="Campaigns\VODACOM\Devices.cs" />
+    <Compile Include="Campaigns\VODACOM\DeviceTypes.cs" />
+    <Compile Include="Campaigns\VODACOM\SaleDetails.cs" />
+    <Compile Include="CampaignWorkflowSteps.cs" />
+    <Compile Include="Clients.cs" />
+    <Compile Include="CommonLists.cs" />
+    <Compile Include="Dashboard.cs" />
+    <Compile Include="DialAPI.cs" />
+    <Compile Include="Incognito.cs" />
+    <Compile Include="Languages.cs" />
+    <Compile Include="MarkSale.cs" />
+    <Compile Include="SubMemberDetails.cs" />
+    <Compile Include="Title.cs" />
+    <Compile Include="UserLanguage.cs" />
+    <Compile Include="PersonalDetails.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RelationshipType.cs" />
+    <Compile Include="Sales.cs" />
+    <Compile Include="SalesLog.cs" />
+    <Compile Include="SubMemberType.cs" />
+    <Compile Include="Users.cs" />
+    <Compile Include="Validators.cs" />
+    <Compile Include="Verification.cs" />
+    <Compile Include="WorkflowNextStep.cs" />
+    <Compile Include="WorkflowStep.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DLLs\Utils.Logger.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Helper\Helper.csproj">
+      <Project>{f0040c3b-37f0-4101-947a-798430de968d}</Project>
+      <Name>Helper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

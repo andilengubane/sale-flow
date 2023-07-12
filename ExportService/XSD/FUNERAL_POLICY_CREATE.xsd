@@ -1,0 +1,51 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <xs:element name="customer">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="refnumber"/>		<!-- Mandatory -->
+              <xs:element type="xs:string" name="subChannel"/>		<!-- Mandatory -->
+              <xs:element type="xs:string" name="campaignNo"/>		<!-- Mandatory -->		
+              <xs:element type="xs:string" name="leadsno"/>		<!-- Mandatory -->
+              <xs:element type="xs:string" name="productCode"/>		<!-- Mandatory (FIS) -->
+              <xs:element type="xs:string" name="subProdCode"/>		<!-- Mandatory (FI) -->
+              <xs:element type="xs:string" name="salesperson"/>		<!-- Mandatory -->
+              <xs:element type="xs:string" name="salespersonID"/>
+              <xs:element type="xs:string" name="salespersonno"/>	<!-- Mandatory -->
+              <xs:element type="xs:string" name="capturedby"/>
+              <xs:element type="xs:string" name="capturedbyno"/>
+              <xs:element type="xs:string" name="capturedDate"/>	<!-- Mandatory (CCYYMMDD) -->
+              <xs:element type="xs:string" name="grossIncome"/>		<!-- Default 0 but Mandatory if needed for Cover Validation -->
+              <xs:element type="xs:string" name="email"/>
+              <xs:element type="xs:string" name="cellNo"/>		<!-- Mandatory (Length=10) -->
+              <xs:element type="xs:string" name="workNo"/> 		<!-- Length=10 --> 
+              <xs:element type="xs:string" name="homeNo"/> 		<!-- Length=10 -->
+              <xs:element type="xs:string" name="postaddstreet"/>	<!-- Mandatory -->
+              <xs:element type="xs:string" name="postaddsuburb"/>	<!-- Provide either Suburb or City or both -->
+              <xs:element type="xs:string" name="postaddcity"/>		<!-- Provide either Suburb or City or both -->
+              <xs:element type="xs:string" name="postaddcode"/>		<!-- Mandatory (Length=4) -->
+              <xs:element name="member" maxOccurs="unbounded" minOccurs="2">  <!-- Mandatory (PH/BE) (PH must always be first) -->
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="relationship"/>	<!-- Mandatory (PH=PolicyHolder/SP=Spouse/CH=Child/EF-Extended Family/PI-Parents/BE=Beneficiary) --> 
+                    <xs:element type="xs:string" name="name"/>		<!-- Mandatory -->
+                    <xs:element type="xs:string" name="middleName"/>
+                    <xs:element type="xs:string" name="birthdate"/>	<!-- Mandatory (CCYYMMDD) -->
+                    <xs:element type="xs:string" name="idType"/>	<!-- Default RSAID -->
+                    <xs:element type="xs:string" name="idNumber"/>	<!-- Mandatory for PolicyHolder -->
+                    <xs:element type="xs:string" name="gender"/>	<!-- Mandatory -->
+                    <xs:element type="xs:string" name="coverAmount"/>	<!-- Mandatory (Not for BE)-->
+                    <xs:element type="xs:string" name="premium"/>	<!-- Mandatory -->
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:string" name="branchCode"/>		<!-- Mandatory -->
+              <xs:element type="xs:string" name="accountNumber"/>	<!-- Mandatory -->	
+              <xs:element type="xs:string" name="accountType"/>		<!-- Mandatory (1=Cheque/2=Savings/3=Transmission) -->
+              <xs:element type="xs:string" name="paydate"/>		<!-- Mandatory (01-31) (Not less than dueDate Day) (Not greater than 5 days from dueDate Day) -->
+              <xs:element type="xs:string" name="dueDate"/>		<!-- Mandatory (CCYYMMDD) -->
+              <xs:element type="xs:string" name="beneficiarycellno"/>
+              <xs:element type="xs:string" name="beneficiaryemail"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+</xs:schema>
